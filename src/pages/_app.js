@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
+import { AnimatePresence } from "framer-motion";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -9,7 +10,9 @@ const inter = Inter({
 export default function App({ Component, pageProps }) {
   return (
     <div className={`${inter.className}`}>
-      <Component {...pageProps} />
+      <AnimatePresence mode="wait">
+        <Component {...pageProps} />
+      </AnimatePresence>
     </div>
   );
 }
